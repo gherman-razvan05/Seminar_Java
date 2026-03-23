@@ -69,5 +69,9 @@ public class Main {
 //	Add entries
 //	Search by name
 //	Print all entries
+        Map<String, String> phoneBook=new HashMap<>();
+        phoneBook.put("Andrei","0712345789");
+        phoneBook.put("Cristi","0789654321");
+        phoneBook.put("George","0754678435");
     }
 }
