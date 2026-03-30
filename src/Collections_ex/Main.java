@@ -1,6 +1,5 @@
 package Collections_ex;
 
-import java.text.CollationElementIterator;
 import java.util.*;
 
 public class Main {
@@ -73,5 +72,62 @@ public class Main {
         phoneBook.put("Andrei","0712345789");
         phoneBook.put("Cristi","0789654321");
         phoneBook.put("George","0754678435");
+
+        String numeCautat = "Andrei";
+        if (phoneBook.containsKey(numeCautat))
+            System.out.println("Numarul lui " + numeCautat+ " este: "+ phoneBook.get(numeCautat));
+        else
+            System.out.println("Contactul nu a fost gasit");
+
+        System.out.println("AGENDA TELEFONICA");
+        for(Map.Entry<String,String> entry: phoneBook.entrySet())
+            System.out.println("Nume: "+entry.getKey()+" - Numar: "+entry.getValue());
+
+//7. Students management system
+//  -given the following class:
+//  class Student {
+//      String name;
+//      int grade;
+//}
+//	Store students in a List<Student>
+//	Print all students
+//	Find the student with the highest grade
+
+        List<Student> s=new ArrayList<>();
+        s.add(new Student("George",8));
+        s.add(new Student("Costel", 6));
+        s.add(new Student("Razvan", 10));
+        s.add(new Student("Raul",4));
+        System.out.println(s);
+
+        Student notaMaxima=s.get(0);
+        for(Student i :s)
+            if(i.compareTo(notaMaxima)>0)
+                notaMaxima=i;
+        System.out.println("Studentul cu cea mai mare nota este: "+notaMaxima.getName()+ " - nota "+notaMaxima.getGrade());
+
+//    8.Sort students by:
+//       Name (alphabetically)
+//       Grade (descending)
+
+        s.sort(Comparator.comparing(Student::getName));
+        System.out.println(s);
+
+        s.sort(Comparator.comparing(Student::getGrade).reversed());
+        System.out.println(s);
+
+//9.Remove Duplicates from Objects
+//Given a list of students (with duplicates), remove duplicates
+
+        System.out.println("HASHSET");
+        Set<Student> s2=new HashSet<>();
+        s2.add(new Student("George",8));
+        s2.add(new Student("Costel", 6));
+        s2.add(new Student("Razvan", 10));
+        s2.add(new Student("Razvan",10));
+        s2.add(new Student("George", 8));
+        s2.add(new Student("Tudor",3));
+        System.out.println(s2);
     }
+
 }
