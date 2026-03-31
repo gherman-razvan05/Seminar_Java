@@ -1,0 +1,5 @@
+Ana,20,info
+Mihai,22,info
+Elena,19,statistica
+George,21,cibernetica
+John,40,info
