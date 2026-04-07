@@ -75,17 +75,36 @@ public abstract class Vehicle {
             this.rented = false;
         }
     }
+
+    public abstract boolean needsService();
+    public abstract double rentalPrice(int days);
 }
 
 class Car extends Vehicle{
 
-    public Car(String brand, double speed, String id, int mileage, boolean rented) {
+    private int doors;
+
+    public Car(String brand, double speed, String id, int mileage, boolean rented, int doors) {
         super(brand, speed, id, mileage, rented);
+        this.doors=doors;
     }
 
     @Override
     public void move() {
         System.out.println(getBrand()+" merge cu viteza: "+ getSpeed()+ " Km/h");
+    }
+
+    @Override
+    public boolean needsService() {
+        return getMileage()>10000;
+    }
+
+    @Override
+    public double rentalPrice(int days) {
+        double price=50*days;
+        if(doors>=4)
+            price*=1.1;
+        return price;
     }
 
     @Override
@@ -110,10 +129,20 @@ class Motorcycle extends Vehicle{
         System.out.println(getBrand()+" merge cu viteza: "+ getSpeed()+ " Km/h");
     }
 
+    @Override
+    public boolean needsService() {
+        return getMileage()>6000;
+    }
+
+    @Override
+    public double rentalPrice(int days) {
+        return days*30;
+    }
+
 
 }
 
-class Truck extends Vehicle{
+class Truck extends Vehicle {
 
     public Truck(String brand, double speed, String id, int mileage, boolean rented) {
         super(brand, speed, id, mileage, rented);
@@ -121,7 +150,17 @@ class Truck extends Vehicle{
 
     @Override
     public void move() {
-        System.out.println(getBrand()+" merge cu viteza: "+ getSpeed()+ " Km/h");
+        System.out.println(getBrand() + " merge cu viteza: " + getSpeed() + " Km/h");
+    }
+
+    @Override
+    public boolean needsService() {
+        return getMileage() > 15000;
+    }
+
+    @Override
+    public double rentalPrice(int days) {
+        return days * 150;
     }
 
 }
