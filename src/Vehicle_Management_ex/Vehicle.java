@@ -118,34 +118,41 @@ class Car extends Vehicle{
     }
 }
 
-class Motorcycle extends Vehicle{
+class Motorcycle extends Vehicle {
 
-    public Motorcycle(String brand, double speed, String id, int mileage, boolean rented) {
+    private boolean hasSideCar;
+
+    public Motorcycle(String brand, double speed, String id, int mileage, boolean rented, boolean hasSideCar) {
         super(brand, speed, id, mileage, rented);
+        this.hasSideCar = hasSideCar;
     }
 
     @Override
     public void move() {
-        System.out.println(getBrand()+" merge cu viteza: "+ getSpeed()+ " Km/h");
+        System.out.println(getBrand() + " merge cu viteza: " + getSpeed() + " Km/h");
     }
 
     @Override
     public boolean needsService() {
-        return getMileage()>6000;
+        return getMileage() > 6000;
     }
 
     @Override
     public double rentalPrice(int days) {
-        return days*30;
+        double price = days * 30;
+        if (hasSideCar)
+            price += 15 * days;
+        return price;
     }
-
-
 }
 
 class Truck extends Vehicle {
 
-    public Truck(String brand, double speed, String id, int mileage, boolean rented) {
+    private int loadCapacity;
+
+    public Truck(String brand, double speed, String id, int mileage, boolean rented, int loadCapacity) {
         super(brand, speed, id, mileage, rented);
+        this.loadCapacity = loadCapacity;
     }
 
     @Override
@@ -160,7 +167,7 @@ class Truck extends Vehicle {
 
     @Override
     public double rentalPrice(int days) {
-        return days * 150;
+        return (80 + 0.02 * loadCapacity) * days;
     }
 
 }

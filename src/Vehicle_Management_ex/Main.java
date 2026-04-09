@@ -4,8 +4,8 @@ public class Main {
     static void main(String[] args) {
         Vehicle[] vehicles = new Vehicle[3];
         vehicles[0] = new Car("Audi", 250, "#01", 10000, false, 4);
-        vehicles[1] = new Motorcycle("BMW", 200, "#02", 15000, true);
-        vehicles[2] = new Truck("Volvo", 100, "#03", 80000, true);
+        vehicles[1] = new Motorcycle("BMW", 200, "#02", 15000, true, true);
+        vehicles[2] = new Truck("Volvo", 100, "#03", 80000, true,6000);
         for (Vehicle v : vehicles)
             v.move();
 
