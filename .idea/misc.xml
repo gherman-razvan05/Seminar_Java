@@ -5,6 +5,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/ModulFilme/pom.xml" />
+        <option value="$PROJECT_DIR$/ModulReflection/pom.xml" />
+        <option value="$PROJECT_DIR$/ModulTCP/pom.xml" />
       </list>
     </option>
   </component>
