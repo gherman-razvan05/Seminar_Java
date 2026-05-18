@@ -3,7 +3,7 @@ package Collections_ex;
 import java.util.*;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
 //  1. Create an ArrayList<String> of student names
 //	Add at least 5 names
