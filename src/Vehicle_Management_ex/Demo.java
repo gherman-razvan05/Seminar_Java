@@ -1,7 +1,7 @@
 package Vehicle_Management_ex;
 
 public class Demo {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Garage garage= new Garage(10);
         garage.add(new Car("Audi", 250, "#01", 10000, false, 4));
         garage.add(new Motorcycle("BMW", 200, "#02", 15000, true, true));

@@ -1,7 +1,7 @@
 package Vehicle_Management_ex;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Vehicle[] vehicles = new Vehicle[3];
         vehicles[0] = new Car("Audi", 250, "#01", 10000, false, 4);
         vehicles[1] = new Motorcycle("BMW", 200, "#02", 15000, true, true);
