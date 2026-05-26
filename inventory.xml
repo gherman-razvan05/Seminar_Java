@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<inventory>
+    <item id="P1001">
+        <name>Laptop</name>
+        <quantity>50</quantity>
+    </item>
+    <item id="P1002">
+        <name>Smartphone</name>
+        <quantity>120</quantity>
+    </item>
+    <item id="P1003">
+        <name>Keyboard</name>
+        <quantity>35</quantity>
+    </item>
+</inventory>
